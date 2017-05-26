@@ -130,8 +130,6 @@ public class SimpleAndroidOCRActivity extends Activity {
                      tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
                     else if(h==0)
                         tts.speak("camera app opened",TextToSpeech.QUEUE_FLUSH, null);
-                    else if (h==2)
-                        tts.speak("texts extracted",TextToSpeech.QUEUE_FLUSH, null);
 
 
 
@@ -147,9 +145,6 @@ public class SimpleAndroidOCRActivity extends Activity {
             case KeyEvent.KEYCODE_VOLUME_DOWN:
                 speak(0);
                 new ButtonClickHandler();
-                return true;
-            case KeyEvent.KEYCODE_VOLUME_UP:
-                speak(1);
                 return true;
 
 
@@ -279,8 +274,8 @@ public class SimpleAndroidOCRActivity extends Activity {
         if ( recognizedText.length() != 0) {
             _field.setText(_field.getText().toString().length() == 0 ? recognizedText : _field.getText() + " " + recognizedText);
             _field.setSelection(_field.getText().toString().length());
-            speak(2);
         }
+        speak(1);
     }
 
 }
